@@ -30,8 +30,8 @@ resource "aws_instance" "hextris-server" {
    security_groups = [aws_security_group.hextris-server.name] 
 }
 output "hextris-url" { 
- value = "http://${aws_instance.hextris-server.public_ip}/" 
-}
+  value = aws_instance.hextris-server.public_ip
+  }
  
 resource "aws_security_group" "hextris-server" { 
  name = "hextris-server" 
